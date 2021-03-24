@@ -6,7 +6,6 @@ const InputTodo = ({setTodosChange}) => {
     const onSubmitForm = async (e) => {
         e.preventDefault();
         try {
-            
             const myHeaders = new Headers(); 
             
             myHeaders.append("Content-Type", "application/json"); 
@@ -14,9 +13,7 @@ const InputTodo = ({setTodosChange}) => {
             
             const body = { description };
             
-            
-            
-            await fetch("http://localhost:5000/dashboard/todos", {
+            await fetch("/dashboard/todos", {
                 method: "POST",
                 headers: myHeaders,
                 body: JSON.stringify(body)
@@ -29,8 +26,7 @@ const InputTodo = ({setTodosChange}) => {
             console.error(err.message)
         }
     };
-
-
+    
     return (
         <Fragment>
             <h1 className="text-center mt-5">PERN Todo List</h1>
@@ -43,6 +39,6 @@ const InputTodo = ({setTodosChange}) => {
             </form>
         </Fragment>
     )
-}
+};
 
 export default InputTodo; 
