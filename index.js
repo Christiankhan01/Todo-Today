@@ -9,7 +9,7 @@ const path = require("path");
 
 app.use(express.json()) //allows us to access data from client side 
 app.use(cors())
-app.use(express.static(path.join(__dirname, "client/build"))); 
+
 if(process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "client/build"))); 
 }
