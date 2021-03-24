@@ -15,6 +15,8 @@ const proConfig = {
         rejectUnauthorized: false
       }
 }
-const pool = new Pool(process.env.NODE_ENV === "production" ? proConfig: devConfig ); 
+const pool = new Pool(
+    process.env.NODE_ENV === "production" ? proConfig: devConfig 
+    ); 
 
 module.exports = pool; 
