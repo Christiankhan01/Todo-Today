@@ -23,7 +23,7 @@ const Register = ({ setAuth }) => {
             const response = await fetch("http://localhost:5000/auth/register",
                 {
                     method: "POST",
-                    headers: { "Content-type": "application/json" },
+                    headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(body)
                 }
             );
@@ -32,7 +32,7 @@ const Register = ({ setAuth }) => {
 
                 localStorage.setItem("token", parseRes.token);
                 setAuth(true);
-                toast.success("Login Successful!");
+                toast.success("Registration Successful!");
 
             } else {
                 setAuth(false)
